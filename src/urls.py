@@ -24,8 +24,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^', include('check.urls')),
     url(r'^', include('book.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-if settings.DEBUG:
+if False:
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
