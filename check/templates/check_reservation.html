@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+Check Reservation
+{% endblock %}
+
+
+{% block content %}
+
+ <div class="col-md-8 col-md-offset-2">
+    <form class="form-horizontal" action="{% url 'check:show_ticket' %}" method="GET" name="q">
+        
+
+
+    {{ form|crispy }}
+    {% csrf_token %}
+        
+    <input type="submit" class="btn btn-primary">
+    
+    </form>
+    </div>
+
+{% endblock %}

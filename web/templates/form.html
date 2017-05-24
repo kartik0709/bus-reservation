@@ -1,0 +1,460 @@
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+   
+   <form class="form-horizontal" method="post" action="{% url 'web:select' %}">
+	{% csrf_token %}
+         <div class="form-group">
+      <label class="control-label requiredField col-sm-2" for="busselect">
+       Bus Type
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <div class="col-sm-10">
+      <select class="select form-control" id="busselect" name="busselect">
+        <option value="volvo">Volvo</option>
+        <option value="ordinary">Ordinary</option>
+          </select>
+         </div>
+       </div>
+     <div class="form-group">
+      <label class="control-label requiredField col-sm-2" for="fromselect">
+       From
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+      <div class="col-sm-10">
+      <select class="select form-control" id="fromselect" name="fromselect">
+       <option value="invalid">
+          From
+          </option>
+       <option value="Agra">
+        Agra
+       </option>
+       <option value="Ajmer">
+        Ajmer
+       </option>
+       <option value="Aligarh">
+        Aligarh
+       </option>
+        <option value="Alwar">
+        Alwar
+       </option>
+        <option value="Ambala">
+        Ambala
+       </option>
+        <option value="Amritsar">
+        Amritsar
+       </option>
+        <option value="Baijnath">
+        Baijnath
+       </option>
+        <option value="Ballabgarh">
+        Ballabgarh
+       </option>
+        <option value="Barthi">
+        Barthi
+       </option>
+        <option value="Bharatpur">
+        Bharatpur
+       </option>
+        <option value="Bhiwani">
+        Bhiwani
+       </option>
+        <option value="Chandigarh">
+        Chandigarh
+       </option>
+        <option value="Charkhidadri">
+        Charkhidadri
+       </option>
+        <option value="Chintpurni">
+        Chintpurni
+       </option>
+        <option value="Churu">
+        Churu
+       </option>
+        <option value="Dehradun">
+        Dehradun
+       </option>
+        <option value="Delhi">
+        Delhi
+       </option>
+        <option value="Derabeas">
+        Derabeas
+       </option>
+        <option value="Dharamshala">
+        Dharamshala
+       </option>
+        <option value="Faridabad">
+        Faridabad
+       </option>
+        <option value="Fatehabad">
+        Fatehabad
+       </option>
+        <option value="Ganganagar">
+        Ganganagar
+       </option>
+        <option value="Gurgaon">
+        Gurgaon
+       </option>
+        <option value="Haldwani">
+        Haldwani
+       </option>
+        <option value="Hamirpur">
+        Hamirpur
+       </option>
+        <option value="Haridwar">
+        Haridwar
+       </option>
+        <option value="Hisar">
+        Hisar
+       </option>
+        <option value="Hoshiarpur">
+        Hoshiarpur
+       </option>
+        <option value="IGI Airport">
+        IGI Airport
+       </option>
+        <option value="Jaipur">
+        Jaipur
+       </option>
+        <option value="Jalandhar">
+        Jalandhar
+       </option>
+        <option value="Jammu">
+        Jammu
+       </option>
+        <option value="Jhajjar">
+        Jhajjar
+       </option>
+        <option value="Jind">
+        Jind
+       </option>
+        <option value="Jodhpur">
+        Jodhpur
+       </option>
+        <option value="Kaithal">
+        Kaithal
+       </option>
+        <option value="Kalka">
+        Kalka
+       </option>
+          <option value="Kangra">
+        Kangra
+       </option>
+          <option value="Karnal">
+        Karnal
+       </option>
+          <option value="Kota">
+        Kota
+       </option>
+          <option value="Kullu">
+        Kullu
+       </option>
+          <option value="Kurukshetra">
+        Kurukshetra
+       </option>
+          <option value="Ludhiana">
+        Ludhiana
+       </option>
+          <option value="Manali">
+        Manali
+       </option>
+          <option value="Mathura">
+        Mathura
+       </option>
+          <option value="Meerut">
+        Meerut
+       </option>
+          <option value="Nainital">
+        Nainital
+       </option>
+          <option value="Narnaul">
+        Narnaul
+       </option>
+          <option value="Palampur">
+        Palampur
+       </option>
+          <option value="Panchkula">
+        Panchkula
+       </option>
+          <option value="Panipat">
+        Panipat
+       </option>
+          <option value="Pathankot">
+        Pathankot
+       </option>
+          <option value="Patiala">
+        Patiala
+       </option>
+          <option value="Rampur">
+        Rampur
+       </option>
+          <option value="Rewari">
+        Rewari
+       </option>
+          <option value="Rishikesh">
+        Rishikesh
+       </option>
+          <option value="Rohtak">
+        Rohtak
+       </option>
+          <option value="Saharanpur">
+        Saharanpur
+       </option>
+          <option value="Shimla">
+        Shimla
+       </option>
+          <option value="Sirsa">
+        Sirsa
+       </option>
+          <option value="Sonipat">
+        Sonipat
+       </option>
+          <option value="Una">
+        Una
+       </option>
+          <option value="Yamunanagar">
+        Yamunanagar
+       </option>
+      </select>
+     </div>
+       </div>
+     <div class="form-group">
+      <label class="control-label requiredField col-sm-2" for="toselect">
+       To
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+         <div class="col-sm-10">
+            <select class="select form-control" id="fromselect" name="fromselect">
+        <option value="invalid">
+          To
+          </option>
+       <option value="Agra">
+        Agra
+       </option>
+       <option value="Ajmer">
+        Ajmer
+       </option>
+       <option value="Aligarh">
+        Aligarh
+       </option>
+        <option value="Alwar">
+        Alwar
+       </option>
+        <option value="Ambala">
+        Ambala
+       </option>
+        <option value="Amritsar">
+        Amritsar
+       </option>
+        <option value="Baijnath">
+        Baijnath
+       </option>
+        <option value="Ballabgarh">
+        Ballabgarh
+       </option>
+        <option value="Barthi">
+        Barthi
+       </option>
+        <option value="Bharatpur">
+        Bharatpur
+       </option>
+        <option value="Bhiwani">
+        Bhiwani
+       </option>
+        <option value="Chandigarh">
+        Chandigarh
+       </option>
+        <option value="Charkhidadri">
+        Charkhidadri
+       </option>
+        <option value="Chintpurni">
+        Chintpurni
+       </option>
+        <option value="Churu">
+        Churu
+       </option>
+        <option value="Dehradun">
+        Dehradun
+       </option>
+        <option value="Delhi">
+        Delhi
+       </option>
+        <option value="Derabeas">
+        Derabeas
+       </option>
+        <option value="Dharamshala">
+        Dharamshala
+       </option>
+        <option value="Faridabad">
+        Faridabad
+       </option>
+        <option value="Fatehabad">
+        Fatehabad
+       </option>
+        <option value="Ganganagar">
+        Ganganagar
+       </option>
+        <option value="Gurgaon">
+        Gurgaon
+       </option>
+        <option value="Haldwani">
+        Haldwani
+       </option>
+        <option value="Hamirpur">
+        Hamirpur
+       </option>
+        <option value="Haridwar">
+        Haridwar
+       </option>
+        <option value="Hisar">
+        Hisar
+       </option>
+        <option value="Hoshiarpur">
+        Hoshiarpur
+       </option>
+        <option value="IGI Airport">
+        IGI Airport
+       </option>
+        <option value="Jaipur">
+        Jaipur
+       </option>
+        <option value="Jalandhar">
+        Jalandhar
+       </option>
+        <option value="Jammu">
+        Jammu
+       </option>
+        <option value="Jhajjar">
+        Jhajjar
+       </option>
+        <option value="Jind">
+        Jind
+       </option>
+        <option value="Jodhpur">
+        Jodhpur
+       </option>
+        <option value="Kaithal">
+        Kaithal
+       </option>
+        <option value="Kalka">
+        Kalka
+       </option>
+          <option value="Kangra">
+        Kangra
+       </option>
+          <option value="Karnal">
+        Karnal
+       </option>
+          <option value="Kota">
+        Kota
+       </option>
+          <option value="Kullu">
+        Kullu
+       </option>
+          <option value="Kurukshetra">
+        Kurukshetra
+       </option>
+          <option value="Ludhiana">
+        Ludhiana
+       </option>
+          <option value="Manali">
+        Manali
+       </option>
+          <option value="Mathura">
+        Mathura
+       </option>
+          <option value="Meerut">
+        Meerut
+       </option>
+          <option value="Nainital">
+        Nainital
+       </option>
+          <option value="Narnaul">
+        Narnaul
+       </option>
+          <option value="Palampur">
+        Palampur
+       </option>
+          <option value="Panchkula">
+        Panchkula
+       </option>
+          <option value="Panipat">
+        Panipat
+       </option>
+          <option value="Pathankot">
+        Pathankot
+       </option>
+          <option value="Patiala">
+        Patiala
+       </option>
+          <option value="Rampur">
+        Rampur
+       </option>
+          <option value="Rewari">
+        Rewari
+       </option>
+          <option value="Rishikesh">
+        Rishikesh
+       </option>
+          <option value="Rohtak">
+        Rohtak
+       </option>
+          <option value="Saharanpur">
+        Saharanpur
+       </option>
+          <option value="Shimla">
+        Shimla
+       </option>
+          <option value="Sirsa">
+        Sirsa
+       </option>
+          <option value="Sonipat">
+        Sonipat
+       </option>
+          <option value="Una">
+        Una
+       </option>
+          <option value="Yamunanagar">
+        Yamunanagar
+       </option>
+      </select>
+     </div>
+       </div>
+     <div class="form-group">
+      <label class="control-label requiredField col-sm-2" for="date">
+       Date
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+        <div class="col-sm-10">
+      <div class="input-group">
+       <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text"/>
+       <div class="input-group-addon">
+        <i class="fa-calendar-check-o">
+        </i>
+       </div>
+      </div>
+     </div>
+      </div>
+     <div class="form-group">
+      <div class="col-sm-offset-1">
+       <button class="btn btn-primary" name="submit" type="submit">
+        Submit
+       </button>
+      </div>
+     </div>
+       
+    </form>
+
+
+
+
+

@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" class="pull-left" rel="home" href="{% url 'web:home' %}">
+        <img style="max-width:100px; margin-top: -35px;"
+             src="{% static 'img/logo1.png' %}">
+    </a>
+            </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          {% url 'web:home' as home %}
+          {% url 'check:check_reservation' as check %}
+          {% url 'contact:contact' as contact %}
+            <li {% if request.path == home %} class="active" {% endif %}><a href="{% url 'web:home' %}">Home</a></li>
+            <li {% if request.path == check %} class="active" {% endif %}><a href="{% url 'check:check_reservation' %}">Check Reservation</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+            {% if not request.user.is_authenticated %}
+                <li><a href="{% url 'account_login' %}">Sign In</a></li>
+                <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+            {% else %}
+                <li><a href="{% url 'web:profile' %}">Profile</a></li>
+                <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+            {% endif %}
+                </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
